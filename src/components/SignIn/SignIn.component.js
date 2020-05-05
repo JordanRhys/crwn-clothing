@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import './SignIn.styles.scss';
+import {SignInContainer, TitleText, ButtonsContainer} from './SignIn.styles';
 
 import FormInput from '../FormInput/FormInput.component';
 import CustomButton from '../CustomButton/CustomButton.component';
@@ -41,8 +41,8 @@ const SignIn = () => {
     }
 
     return (
-        <div className='sign-in'>
-            <h2 className='title'>I already have an account</h2>
+        <SignInContainer>
+            <TitleText>I already have an account</TitleText>
             <span>Sign in with your email and password</span>
 
             <form onSubmit={handleSubmit}>
@@ -62,16 +62,16 @@ const SignIn = () => {
                     value={state.password}
                     required
                 />
-                <div className='buttons'>
+                <ButtonsContainer>
                     <CustomButton type='submit'>
                         Sign in
                     </CustomButton>
                     <CustomButton type='button' onClick={signInWithGoogle} isGoogleSignIn>
                         Sign in with Google
                     </CustomButton>
-                </div>
+                </ButtonsContainer>
             </form>
-        </div>
+        </SignInContainer>
     )
 }
 
